@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot = "start">
+      <ion-back-button defaultHref = "/omiljeni">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Vise informacija o ovom etno-selu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class = "ion-padding">
+    <ion-card-header>
+      <ion-card-title>{{etnoselo.naziv}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src] = "etnoselo.slikaUrl">
+      <p>{{etnoselo.opis}}</p>
+    </ion-card-content>
+    <!-- <ion-card-footer>
+       {{etnoselo.opis}}
+     </ion-card-footer> -->
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-icon name= "heart-dislike" slot = "end" (click) = "openAlert()" [routerLink]="['/','etnosela','omiljeni']"></ion-icon>
+  </ion-toolbar>
+</ion-footer>

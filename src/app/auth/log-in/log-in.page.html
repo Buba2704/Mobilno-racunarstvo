@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot = "start">
+      <ion-back-button defaultHref = "/onama">
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Logovanje</ion-title>
+    <ion-buttons slot = "end">
+      <ion-button href="/register">Nemate nalog? Registrujte se!</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #LogInForm = "ngForm" (ngSubmit) = "onLogIn(LogInForm)">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm = "4" offset-sm = "4">
+        <ion-list>
+          <ion-item>
+            <ion-label position = "floating">Email</ion-label>
+            <ion-input type = "email" ngModel name = "email" required email #email = "ngModel"></ion-input>
+          </ion-item>
+          <ion-item lines = "none" *ngIf="email.invalid && email.touched">
+            <label class="vp"> Morate uneti validnu email adresu. </label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position = "floating">Lozinka</ion-label>
+            <ion-input type = "password" ngModel name = "password" required minlength = "6" #password = "ngModel" ></ion-input>
+          </ion-item>
+          <ion-item lines = "none" *ngIf="password.invalid && password.touched">
+            <label class="vp"> Morate uneti lozinku sa najmanje 6 karaktera. </label>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size-sm = "4" offset = "4">
+        <!-- Bilo je u okviru dugmeta (click) = "onLogIn() sve dok nismo ovo prebacili u tag forme <form>-->
+        <ion-button type = "submit" color = "tertiary" expand = "block" shape = "round" [disabled]="LogInForm.invalid" >Loguj se</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  </form>
+</ion-content>

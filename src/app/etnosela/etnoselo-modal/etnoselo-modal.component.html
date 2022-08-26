@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Dodaj novo etno-selo </ion-title>
+
+    <ion-buttons slot = "end">
+      <ion-button  (click) = "onCancel()">
+        <ion-icon name = "close" slot = "end"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <form #f = "ngForm" (ngSubmit)="dodajSelo()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm = "6" offset-sm="3">
+          <ion-item>
+            <ion-label position = "floating" >Naziv etno-sela: </ion-label>
+            <ion-input type = "text" ngModel name = "naziv"  required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm = "6" offset-sm="3">
+          <ion-item>
+            <ion-label position = "floating" >Opis: </ion-label>
+            <ion-textarea type = "text" rows = "6" ngModel name = "opis" required ></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm = "6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Url slike: </ion-label>
+            <ion-input type="text" ngModel name = "slikaUrl" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm = "6" offset-sm="3">
+          <ion-button type = "submit" color = "primary" expand = "block" [disabled]="f.invalid">
+            Dodaj etno-selo
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </form>
+</ion-content>

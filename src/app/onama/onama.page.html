@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot = "end">
+      <ion-button type = "submit"  color = "primary" fill = "solid" shape = "round" [routerLink]="['/','log-in']">Loguj se</ion-button>
+      <ion-button type = "submit"  color = "primary" fill = "solid" shape = "round" [routerLink]="['/','register']">Registruj se</ion-button>
+    </ion-buttons>
+
+    <ion-title>O nama</ion-title>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm = "5" offset-sm = "1">
+       <ion-img src = "https://nova.rs/wp-content/uploads/2021/11/17/1637163703-kombo-1200x800.jpg"></ion-img>
+      </ion-col>
+      <ion-col size-sm = "5">
+        <ion-text  color = "tertiary" class = "ion-text-center">
+          <h1>DOBRODOŠLI!</h1>
+          <p>
+            ETNO-SELA SU NAJTRAŽENIJA DESTINACIJA
+            ZA ODMOR U SRBIJI.
+            NA NAŠEM SAJTU MOŽETE PRONAĆI SPISAK ETNO-SELA U SRBIJI I
+            DOBITI VIŠE INFORMACIJA O NJIMA.
+          </p>
+          <p> UKOLIKO VAM JE POTREBAN ODMOR I ŽELITE DA UŽIVATE U PRIRODI,
+            ISKORISTITE PRILIKU I POSETITE NEKA OD NJIH, NEĆETE ZAŽALITI!</p>
+        </ion-text>
+
+        <div>
+        <ion-label  color = "tertiary" class = "ion-text-center"> Pogledajte današnji datum: </ion-label>
+        <ion-button  (click) = prikaziDatum() color = "tertiary" shape = "round" >
+            <ion-icon name="calendar-outline"></ion-icon>
+        </ion-button>
+        <ion-datetime presentation="date" color = "tertiary"  *ngIf="datum" ></ion-datetime>
+        </div>
+
+
+
+
+
+
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

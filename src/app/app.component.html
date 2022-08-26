@@ -1,0 +1,51 @@
+<ion-app>
+
+  <ion-menu side="start" contentId="meni">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>ETNO-SELA SRBIJE</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list lines = "none">
+
+        <!-- <ion-menu-toggle>
+        <ion-item routerLink = "/onama">
+          <ion-icon name="home-outline" slot = "start"></ion-icon>
+          <ion-label>O nama</ion-label>
+        </ion-item>
+        </ion-menu-toggle> -->
+        <ion-menu-toggle>
+          <ion-item routerLink = "etnosela/profil">
+            <ion-icon name="person-outline" slot = "start"></ion-icon>
+            <ion-label>Moj profil</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+        <ion-item routerLink = "etnosela/pretraga">
+          <ion-icon name="search-outline" slot = "start"></ion-icon>
+          <ion-label>Pretraga etno sela</ion-label>
+        </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+        <ion-item routerLink = "/etnosela/omiljeni">
+          <ion-icon name="heart-circle-outline" slot= "start"></ion-icon>
+          <ion-label>Omiljena etno-sela</ion-label>
+        </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+        <ion-item routerLink = "/log-in" (click)="onLogOut()">
+          <ion-icon name="log-out-outline" slot = "start"></ion-icon>
+          <ion-label>Odjavi se</ion-label>
+        </ion-item>
+        </ion-menu-toggle>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id = "meni"></ion-router-outlet>
+</ion-app>

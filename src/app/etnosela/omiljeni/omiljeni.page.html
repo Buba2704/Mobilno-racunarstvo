@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Moja omiljena etno-sela </ion-title>
+
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class = "ion-padding">
+  <ion-searchbar
+    placeholder='Pretraži' [(ngModel)] = "searchTerm"
+    showCancelButton="focus"
+    animated
+  >
+  </ion-searchbar>
+
+  <ion-list>
+    <!-- [routerLink]="es.id"-->
+    <app-omiljeni-element *ngFor = "let es of etnosela | filter:searchTerm " [etnoselo] = "es" ></app-omiljeni-element>
+  </ion-list>
+
+</ion-content>

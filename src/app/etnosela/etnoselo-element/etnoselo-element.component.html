@@ -1,0 +1,10 @@
+
+<!-- <ion-item [routerLink]="etnoselo.id" > -->
+<ion-item  [routerLink]="['/','etnosela','pretraga', etnoselo.id]" >
+
+  <ion-thumbnail slot = "start" >
+    <ion-img  [src] = "etnoselo.slikaUrl"></ion-img>
+  </ion-thumbnail>
+  <ion-label> {{etnoselo.naziv}}</ion-label>
+
+</ion-item>
